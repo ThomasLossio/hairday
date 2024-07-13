@@ -1,6 +1,7 @@
 import dayjs from "dayjs"
 
 import { openingHours } from "../../utils/opening-hours.js"
+import { hoursClick } from "./hours-click.js"
 
 const hours = document.getElementById("hours")
 
@@ -31,8 +32,11 @@ export function hoursLoad({ date }) {
     } else if (hour === "18:00") {
       hourHeaderAdd("Noite")
     }
+
     hours.append(li)
   })
+
+  hoursClick()
 }
 
 function hourHeaderAdd(title) {
